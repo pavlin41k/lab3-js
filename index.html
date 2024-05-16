@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ваша веб-сторінка</title>
+    <style>
+        
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .navigation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            width: calc(100% - 125px);
+            position: relative; 
+        }
+
+        .author-info {
+            display: none;
+            position: absolute;
+            top: calc(50% + 35px); 
+            left: 97.5%; 
+            transform: translateX(-50%); 
+            background-color: #abe8f7;
+            color: black;
+            padding: 10px;
+            border-radius: 5px;
+            z-index: 9999;
+            width: 300px;
+            text-align: center;
+            }
+
+        .logo img:hover + .author-info {
+            display: block;
+        }
+
+        .task-block {
+            margin-top: 80px;
+            padding: 5px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .task-block h2 {
+            cursor: pointer;
+            margin-top: 20px;
+            margin-left: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .task-block h2::after {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: transparent;
+            transition: background-color 0.3s;
+        }
+
+        .task-block h2:hover {
+            color: #800080;
+        }
+
+        a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .task-links {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            margin-right: 50px;
+        }
+
+        .task-links a {
+            margin: 0 20px;
+        }
+    
+    </style>
+    <script src="script.js"></script> 
+
+</head>
+
+<body>
+    <nav class="navigation">
+        <div class="logo">
+            <img src="ico.png" alt="Лого" id="logo">
+            <div class="author-info">
+                <p>Бондаренко Павло</p>
+                <p>Здобувач освіти групи П-311</p>
+            </div>
+        </div>
+    </nav>
+
+    <div id="task1" class="task-block">
+        <h2 onclick="openTask('task1')">Завдання 1</h2>
+        <label for="numberInput1">Введіть число:</label>
+        <input type="text" id="numberInput1">
+        <button onclick="calculateTask1()">Розрахувати</button>
+        <p id="result1"></p>
+    </div>
+    
+    <div id="task2" class="task-block">
+        <h2 onclick="openTask('task2')">Завдання 2</h2>
+        <label for="numberInput2">Введіть натуральне число:</label>
+        <input type="text" id="numberInput2">
+        <button onclick="findLargestDigitTask2()">Знайти</button>
+        <p id="result2"></p>
+    </div>
+    
+    <div id="task3" class="task-block">
+        <h2 onclick="openTask('task3')">Завдання 3</h2>
+        <label for="numberInput3">Введіть число:</label>
+        <input type="text" id="numberInput3">
+        <button onclick="checkDuplicate()">Перевірити</button>
+        <p id="result3"></p>
+        <p>Введені числа:</p>
+        <ul id="enteredNumbersList"></ul>
+    </div>
+    
+    <div id="task4" class="task-block">
+        <h2 onclick="openTask('task4')">Завдання 4</h2>
+        <label for="textInput4">Введіть текст:</label>
+        <textarea id="textInput4"></textarea>
+        <button onclick="countCharacters()">Обчислити</button>
+        <p id="result4"></p>
+    </div>
+    
+</body>
+</html>
